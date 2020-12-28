@@ -21,15 +21,15 @@ class Config:
     # output path
     batch_size = 36
     if dataset_name == "COCO":
-        output_dir = os.path.join(root_dir, 'logs', username + '.' + this_dir_name)
+        output_dir = os.path.join('logs', username)
         model_dump_dir = osp.join(output_dir, 'model_dump_COCO')
         epoch_size = int(149025 / batch_size) * 10
     elif dataset_name == "posetrack":
-        output_dir = os.path.join(root_dir, 'logs', username + '.' + this_dir_name)
+        output_dir = os.path.join('logs', username)
         model_dump_dir = osp.join(output_dir, 'model_dump_PT')
         epoch_size = int(51136 / batch_size) * 10
     elif dataset_name == "posetrack+COCO":
-        output_dir = os.path.join(root_dir, 'logs', username + '.' + this_dir_name)
+        output_dir = os.path.join('logs', username)
         model_dump_dir = osp.join(output_dir, 'model_dump_PTCOCO')
         epoch_size = int(200161 / batch_size) * 10
 

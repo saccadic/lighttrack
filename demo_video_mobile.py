@@ -25,8 +25,13 @@ from HPE.config import cfg
 from tfflat.base import Tester
 from tfflat.utils import mem_info
 from tfflat.logger import colorlogger
-from nms.gpu_nms import gpu_nms
-from nms.cpu_nms import cpu_nms
+import nms
+# from nms.gpu_nms import gpu_nms
+# from nms.cpu_nms import cpu_nms
+
+#from py_fast_rcnn_gpu import
+
+
 
 # import GCN utils
 from graph import visualize_pose_matching
@@ -775,7 +780,7 @@ def bbox_invalid(bbox):
 if __name__ == '__main__':
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument('--video_path', '-v', type=str, dest='video_path', default="data/demo/video.mp4")
+    parser.add_argument('--video_path', '-v', type=str, dest='video_path', default="data/demo/sample2.avi")
     parser.add_argument('--model', '-m', type=str, dest='test_model', default="weights/mobile-deconv/snapshot_296.ckpt")
     args = parser.parse_args()
     args.bbox_thresh = 0.4
